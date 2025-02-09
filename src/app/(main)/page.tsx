@@ -1,5 +1,5 @@
-import Welcome from "@/components/next-kit-welcome";
+import Welcome from "@/components/next-kit-welcome"
 
 export default function Home() {
-  return <Welcome />;
+  return <Welcome />
 }
