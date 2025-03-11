@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean:dev": "npx rimraf .next && next dev --turbopack",
+    "clean:build": "npx rimraf .next && next build"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.12",

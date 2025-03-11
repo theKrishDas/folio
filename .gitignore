@@ -3,11 +3,9 @@
 # Custom
 *.ignore.*
 
-# editor
+# Editors
 .idea/*
 .vscode/*
-
-# Editors
 
 # dependencies
 /node_modules
