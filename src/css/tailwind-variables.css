@@ -38,8 +38,11 @@
   --color-separator-opaque: var(--separator-opaque);
   --color-separator-non-opaque: var(--separator-non-opaque);
 
-  --font-geist-sans: var(--font-geist-sans), system-ui, -apple-system, Segoe UI,
+  --font-geist-sans: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-geist-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular,
-    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-jetbrains-mono: var(--font-jetbrains-mono), ui-monospace,
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  --font-instrument-serif: var(--font-instrument-serif), Georgia,
+    "Times New Roman", Times, serif, "Apple Color Emoji", "Segoe UI Emoji";
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
 
@@ -10,15 +10,23 @@ const geistSans = Geist({
   subsets: ["latin"],
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
 })
 
 export const metadata: Metadata = {
-  title: "Nextkit - A nextjs starter kit",
-  description:
-    "Accelerate web development with Nextkit: a pre-configured Next.js, TypeScript, and Tailwind boilerplate.",
+  title: "Upshers's portfolio",
+  description: "Coming soon...",
 }
 
 export default function RootLayout({
@@ -28,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
+      >
         <Provider>{children}</Provider>
       </body>
     </html>
