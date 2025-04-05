@@ -1,16 +1,12 @@
 @import "tailwindcss";
+@import "../css/colors";
+@import "../css/tailwind-variables";
 
-:root {
-  --background: oklch(100% 0 0);
-  --foreground: oklch(20.46% 0 0);
+html {
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(14.48% 0 0);
-    --foreground: oklch(94.61% 0 0);
-  }
-
   html {
     color-scheme: dark;
   }
@@ -34,12 +30,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+::selection {
+  color: var(--selection-foreground-color);
+  background-color: color-mix(
+    in oklab,
+    var(--selection-background-color) var(--selection-background-opacity),
+    transparent
+  );
+}
 
-  --font-geist-sans: var(--font-geist-sans), system-ui, -apple-system, Segoe UI,
-    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-geist-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular,
-    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+::-moz-selection {
+  color: var(--selection-foreground-color);
+  background-color: color-mix(
+    in oklab,
+    var(--selection-background-color) var(--selection-background-opacity),
+    transparent
+  );
 }
