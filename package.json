@@ -18,7 +18,9 @@
     "next": "15.2.4",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
+    "react-aria-components": "^1.7.1",
     "react-dom": "^19.1.0",
+    "react-use-downloader": "^1.2.10",
     "tailwind-merge": "^3.1.0",
     "tailwindcss": "^4.1.3"
   },
