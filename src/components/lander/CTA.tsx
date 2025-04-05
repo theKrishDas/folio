@@ -14,14 +14,14 @@ export default function CTA() {
 
         <Divider className="h-4 w-1" />
 
-        <div className="[&_button]:text-gray-1 [&_button]:bg-fill-quaternary flex items-center gap-2">
-          <Button isIconOnly>
+        <div className="flex items-center gap-2">
+          <Button color="gray" isIconOnly>
             <MatMailRounded />
           </Button>
-          <Button isIconOnly>
+          <Button color="gray" isIconOnly>
             <BlueskySocialFill />
           </Button>
-          <Button isIconOnly>
+          <Button color="gray" isIconOnly>
             <GithubFace />
           </Button>
         </div>

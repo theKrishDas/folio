@@ -20,7 +20,7 @@ export default function DownloadCV() {
 
   return (
     <Button
-      className="bg-ios-blue/[var(--fill-tertiary-opacity)] text-ios-blue Xbg-fill-tertiary disabled:text-label-secondary disabled:bg-fill-secondary transition-colors duration-250"
+      variant="tinted"
       size="lg"
       isDisabled={shouldDisableButton}
       onPress={() => download(fileUrl, filename)}
