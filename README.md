@@ -1,23 +1,31 @@
-# NextKit - A nextjs starter kit (DEVELOPEMENT)
+# Nextkit - A nextjs starter kit (DEVELOPEMENT)
 
-Accelerate web development with NextKit: a pre-configured Next.js, TypeScript,
-and Tailwind boilerplate.
+Accelerate NextJS development with Nextkit: a pre-configured Next.js,
+TypeScript, and Tailwind boilerplate.
 
 ## Cloning:
 
-```bash
-git clone -b update/next15 https://github.com/Krish-Das/nextkit.git .
+### Clone in Nextkit:
+
+```sh
+git clone -b next@15 https://github.com/Krish-Das/nextkit.git
 ```
 
-### single branch:
+### or clone in current directory:
 
-```bash
-git clone -b update/next15 --single-branch https://github.com/Krish-Das/nextkit.git .
+```sh
+git clone -b next@15 https://github.com/Krish-Das/nextkit.git .
+```
+
+### or clone single branch in current directory:
+
+```sh
+git clone -b next@15 --single-branch https://github.com/Krish-Das/nextkit.git .
 ```
 
 ## Running locally
 
-```bash
+```sh
 npm run dev
 ```
 
