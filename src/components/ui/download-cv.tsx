@@ -22,7 +22,7 @@ export default function DownloadCV() {
     <Button
       variant="tinted"
       size="lg"
-      isDisabled={shouldDisableButton}
+      isDisabled={true || shouldDisableButton}
       onPress={() => download(fileUrl, filename)}
     >
       {isInProgress ? <SvgSpinnersRing /> : <MatDownloadingRounded />}
