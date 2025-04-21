@@ -6,7 +6,7 @@ import { BlueskySocialFill, GithubFace } from "@/components/icons/logos"
 import { MatMailRounded } from "@/components/icons/material-icons"
 import { Divider } from "@/components/typography"
 
-const recieverName = "Soon"
+const recieverName = "Upsher"
 const email = "email@example.com"
 const subject = "Inquiry"
 const body = "Hello, I am interested in..."

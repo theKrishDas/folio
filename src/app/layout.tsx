@@ -3,6 +3,7 @@ import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
 
+import { siteMetadata } from "@/lib/metadata"
 import Provider from "@/components/provider"
 
 const geistSans = Geist({
@@ -24,10 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
   style: ["normal", "italic"],
 })
 
-export const metadata: Metadata = {
-  title: "Upshers's portfolio",
-  description: "Coming soon...",
-}
+export const metadata: Metadata = siteMetadata
 
 export default function RootLayout({
   children,
