@@ -62,4 +62,7 @@ export const siteMetadata: Metadata = {
     },
   },
   metadataBase: new URL(baseURL),
+  alternates: {
+    canonical: "/",
+  },
 }
