@@ -2,12 +2,15 @@ import { Metadata } from "next"
 
 import { baseURL } from "./constants"
 
+const title = "Upsher - Web App developer" as const
+const description = "Web App developer, optimist, living in India" as const
+
 export const siteMetadata: Metadata = {
   title: {
-    default: "Upsher - Web App developer",
+    default: title,
     template: "%s - Upsher's folio",
   },
-  description: "Web App developer, optimist, living in India",
+  description,
   keywords: [
     "Krish Das",
     "Upsher",
@@ -28,15 +31,15 @@ export const siteMetadata: Metadata = {
   authors: [{ name: "Upsher", url: baseURL }],
   creator: "Upsher",
   openGraph: {
-    title: "Upsher - Web App developer",
-    description: "Web App developer, optimist, living in India",
+    title,
+    description,
     url: baseURL,
     siteName: "Upsher's Portfolio",
     images: [
       {
-        url: `${baseURL}/og-image.png`,
-        width: 1500, // 1200
-        height: 500, // 630
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
         alt: "Banner of Upsher's Portfolio",
       },
     ],
@@ -45,10 +48,10 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Upsher - Web App developer",
-    description: "Web App developer, optimist, living in India",
+    title,
+    description,
     creator: "@upsher",
-    images: [`${baseURL}/og-image.png`],
+    images: ["/twitter-image.jpg"],
   },
   robots: {
     index: true,
