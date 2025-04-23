@@ -24,17 +24,26 @@ export default function CTA() {
           <SocialLinks
             href={mailtoLink}
             aria-label={`Contact ${receiverName} (email)`}
-            title={`Write an email to ${receiverName}`}
+            title="Write me an email"
             rel="noopener noreferrer"
-            target="_blank"
             data-type="contact"
           >
             <MatMailRounded />
           </SocialLinks>
-          <SocialLinks href="https://x.com/theupsher">
+          <SocialLinks
+            href="https://x.com/theupsher"
+            rel="noopener noreferrer"
+            aria-label="Visit Upsher on X (Twitter)"
+            title="Follow me on X"
+          >
             <BlueskySocialFill />
           </SocialLinks>
-          <SocialLinks href="https://github.com/Krish-Das/">
+          <SocialLinks
+            href="https://github.com/Krish-Das/"
+            rel="noopener noreferrer"
+            aria-label="Visit Upsher's GitHub"
+            title="Check out my GitHub"
+          >
             <GithubFace />
           </SocialLinks>
         </div>
