@@ -29,10 +29,10 @@ export default function CTA() {
           >
             <MatMailRounded />
           </SocialLinks>
-          <SocialLinks href="#">
+          <SocialLinks href="https://x.com/theupsher">
             <BlueskySocialFill />
           </SocialLinks>
-          <SocialLinks href="#">
+          <SocialLinks href="https://github.com/Krish-Das/">
             <GithubFace />
           </SocialLinks>
         </div>
