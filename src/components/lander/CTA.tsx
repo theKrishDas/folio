@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/container"
 import DownloadCV from "@/components/ui/download-cv"
 import { Section } from "@/components/ui/section"
 import { SocialLinks } from "@/components/ui/social-links"
-import { BlueskySocialFill, GithubFace } from "@/components/icons/logos"
+import { GithubFace, Twitter } from "@/components/icons/logos"
 import { MatMailRounded } from "@/components/icons/material-icons"
 import { Divider } from "@/components/typography"
 
@@ -36,7 +36,7 @@ export default function CTA() {
             aria-label="Visit Upsher on X (Twitter)"
             title="Follow me on X"
           >
-            <BlueskySocialFill />
+            <Twitter />
           </SocialLinks>
           <SocialLinks
             href="https://github.com/Krish-Das/"
