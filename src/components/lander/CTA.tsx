@@ -39,7 +39,7 @@ export default function CTA() {
             <Twitter />
           </SocialLinks>
           <SocialLinks
-            href="https://github.com/Krish-Das/"
+            href="https://github.com/thekrishdas"
             rel="noopener noreferrer"
             aria-label="Visit Upsher's GitHub"
             title="Check out my GitHub"
