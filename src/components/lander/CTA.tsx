@@ -2,14 +2,14 @@ import { Container } from "@/components/ui/container"
 import DownloadCV from "@/components/ui/download-cv"
 import { Section } from "@/components/ui/section"
 import { SocialLinks } from "@/components/ui/social-links"
-import { BlueskySocialFill, GithubFace } from "@/components/icons/logos"
+import { GithubFace, Twitter } from "@/components/icons/logos"
 import { MatMailRounded } from "@/components/icons/material-icons"
 import { Divider } from "@/components/typography"
 
-const recieverName = "Upsher"
-const email = "email@example.com"
-const subject = "Inquiry"
-const body = "Hello, I am interested in..."
+const receiverName = "Upsher"
+const email = "thekrishdas@gmail.com"
+const subject = `Let's build something cool, ${receiverName} 😎`
+const body = `Hey ${receiverName}, `
 const mailtoLink = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 
 export default function CTA() {
@@ -23,16 +23,27 @@ export default function CTA() {
         <div className="flex items-center gap-2">
           <SocialLinks
             href={mailtoLink}
-            aria-label={`Send an email to ${recieverName} for an inquiry`}
+            aria-label={`Contact ${receiverName} (email)`}
+            title="Write me an email"
             rel="noopener noreferrer"
-            title={`Send an email to ${recieverName} for an inquiry`}
+            data-type="contact"
           >
             <MatMailRounded />
           </SocialLinks>
-          <SocialLinks href="#">
-            <BlueskySocialFill />
+          <SocialLinks
+            href="https://x.com/theupsher"
+            rel="noopener noreferrer"
+            aria-label="Visit Upsher on X (Twitter)"
+            title="Follow me on X"
+          >
+            <Twitter />
           </SocialLinks>
-          <SocialLinks href="#">
+          <SocialLinks
+            href="https://github.com/thekrishdas"
+            rel="noopener noreferrer"
+            aria-label="Visit Upsher's GitHub"
+            title="Check out my GitHub"
+          >
             <GithubFace />
           </SocialLinks>
         </div>
