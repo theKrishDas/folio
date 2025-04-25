@@ -50,4 +50,4 @@ const ExperimentalNextImage = ({ src, alt }: { src: string; alt: string }) => {
   )
 }
 
-export { Image, type ImageProps }
+export { Image, type ImageProps, ExperimentalNextImage }
