@@ -16,7 +16,10 @@ const Strong = forwardRef<HTMLElement, StrongProps>(
     return (
       <Comp
         ref={ref}
-        className={cn("text-label-primary/86 font-bold", className)}
+        className={cn(
+          "text-label-primary/86 dark:text-label-primary font-bold",
+          className
+        )}
         {...rest}
       />
     )
