@@ -6,9 +6,12 @@ export default function About() {
   return (
     <Container shorterWidth asChild>
       <Section asChild>
-        <article>
-          <Heading styleAs="h3" className="mt-0 mb-4">
-            Upsher<span aria-hidden>{"_"}</span>
+        <article aria-labelledby="about-heading">
+          <Heading styleAs="h3" className="mt-0 mb-4" id="about-heading">
+            Upsher
+            <span aria-hidden className="touch-none select-none">
+              {"_"}
+            </span>
           </Heading>
 
           <Paragraph>
