@@ -33,15 +33,23 @@ export default function Location() {
 function Map() {
   const Pin = () => {
     return (
-      <div className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 p-[0.3rem] shadow-xl/15 backdrop-blur-lg">
+      <div
+        className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 p-[0.3rem] shadow-xl/15 backdrop-blur-lg"
+        aria-hidden="true"
+      >
         <div className="bg-ios-blue h-full w-full rounded-full" />
       </div>
     )
   }
 
   return (
-    <div className="bg-fill-quaternary relative h-75 overflow-hidden rounded-xl bg-cover bg-center">
+    <div
+      className="bg-fill-quaternary relative h-75 overflow-hidden rounded-xl bg-cover bg-center"
+      aria-label="Map of Siliguri, West Bengal"
+      role="img"
+    >
       <Image
+        id="siliguri-map"
         src="/images/siliguri.png"
         alt="Map of Siliguri, West Bengal"
         style={{ objectFit: "cover" }}
@@ -61,6 +69,7 @@ const FloatingLocation = () => {
         buttonVariants({ size: "sm" }),
         "text-label-secondary bg-background/80 absolute right-2 bottom-2 rounded-lg pl-2 text-xs shadow-md backdrop-blur-lg"
       )}
+      aria-hidden="true"
     >
       <MatLocationOn />
       Siliguri, West Bengal
