@@ -17,6 +17,7 @@
     "clsx": "^2.1.1",
     "next": "15.2.4",
     "postcss": "^8.5.3",
+    "posthog-js": "^1.236.6",
     "react": "^19.1.0",
     "react-aria-components": "^1.7.1",
     "react-dom": "^19.1.0",
