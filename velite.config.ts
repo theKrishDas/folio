@@ -1,6 +1,6 @@
 import { defineCollection, defineConfig, s } from "velite"
 
-import { computedFields } from "@/lib/velite"
+import { computedFields, timestamp } from "@/lib/velite"
 
 // NOTE: Visit the docs
 // https://velite.js.org/guide/define-collections#collection-schema-options
@@ -13,6 +13,7 @@ const writings = defineCollection({
       slug: s.path(),
       summary: s.string(),
       date: s.isodate(),
+      lastModified: timestamp(),
       published: s.boolean().default(true),
       cover: s.image().optional(),
       body: s.mdx(),
