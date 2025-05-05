@@ -1,14 +1,6 @@
 import { defineCollection, defineConfig, s } from "velite"
 
-// WARN: I don't like this here
-export const baseWritingsURL = "w" as const
-
-const computedFields = <T extends { slug: string }>(data: T) => ({
-  ...data,
-  slugAsParams: [baseWritingsURL, data.slug.split("/").slice(1).join("/")].join(
-    "/"
-  ),
-})
+import { computedFields } from "@/lib/velite"
 
 // NOTE: Visit the docs
 // https://velite.js.org/guide/define-collections#collection-schema-options
