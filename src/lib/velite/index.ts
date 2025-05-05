@@ -1,9 +1,6 @@
 import { stat } from "fs/promises"
 import { defineSchema, s } from "velite"
 
-// WARN: I don't like this here
-export const baseWritingsURL = "w" as const
-
 const timestamp = defineSchema(() =>
   s
     .custom<string | undefined>(i => i === undefined || typeof i === "string")
@@ -24,9 +21,7 @@ const timestamp = defineSchema(() =>
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
-  slugAsParams: [baseWritingsURL, data.slug.split("/").slice(1).join("/")].join(
-    "/"
-  ),
+  slugAsParams: data.slug.split("/").slice(1).join("/"),
 })
 
 export { computedFields, timestamp }
