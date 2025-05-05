@@ -28,8 +28,4 @@ const writings = defineCollection({
     .transform(computedFields),
 })
 
-export default defineConfig({
-  collections: { writings },
-  strict: true,
-  output: { clean: true }, // Clean output directories before build.
-})
+export default defineConfig({ collections: { writings } })
