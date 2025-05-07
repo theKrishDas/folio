@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev:next": "next dev --turbopack",
+    "build:next": "next build",
+    "dev:content": "velite --watch",
+    "build:content": "velite --clean",
     "start": "next start",
     "lint": "next lint",
+    "build": "npm run build:content && npm run build:next",
     "clean:dev": "npx rimraf .next && next dev --turbopack",
-    "clean:build": "npx rimraf .next && next build"
+    "clean:build": "npx rimraf .next && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
