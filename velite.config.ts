@@ -1,4 +1,10 @@
-// import rehypePrettyCode from "rehype-pretty-code"
+import rehypeShiki from "@shikijs/rehype"
+import {
+  transformerNotationDiff,
+  transformerNotationErrorLevel,
+  transformerNotationFocus,
+  transformerNotationHighlight,
+} from "@shikijs/transformers"
 import { defineCollection, defineConfig, s } from "velite"
 
 import { computedFields, timestamp } from "@/lib/velite"
@@ -37,7 +43,20 @@ export default defineConfig({
   },
   collections: { writings },
   mdx: {
-    rehypePlugins: [],
+    rehypePlugins: [
+      [
+        rehypeShiki as any, // eslint-disable-line @typescript-eslint/no-explicit-any
+        {
+          theme: "one-dark-pro",
+          transformers: [
+            transformerNotationDiff({ matchAlgorithm: "v3" }),
+            transformerNotationHighlight({ matchAlgorithm: "v3" }),
+            transformerNotationFocus({ matchAlgorithm: "v3" }),
+            transformerNotationErrorLevel({ matchAlgorithm: "v3" }),
+          ],
+        },
+      ],
+    ],
     remarkPlugins: [],
   },
 })
