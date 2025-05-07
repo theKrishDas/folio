@@ -3,16 +3,16 @@ import { ComponentPropsWithoutRef, forwardRef } from "react"
 import { cn } from "@/lib/utils"
 
 /* -------------------------------------------------------------------------------------------------
- * InlineCode
+ * Pre
  * -----------------------------------------------------------------------------------------------*/
-type InlineCodeProps = ComponentPropsWithoutRef<"code">
-const InlineCode = forwardRef<HTMLElement, InlineCodeProps>(
+type PreProps = ComponentPropsWithoutRef<"pre">
+const Pre = forwardRef<HTMLPreElement, PreProps>(
   ({ className, ...rest }, ref) => {
     return (
-      <code
+      <pre
         ref={ref}
         className={cn(
-          "font-jetbrains-mono bg-fill-quaternary border-fill-tertiary rounded-lg border px-1.5 py-0.5 text-[0.85em] leading-none tracking-normal break-words",
+          "bg-fill-quaternary border-fill-tertiary overflow-x-hidden rounded-[0.4rem] border",
           className
         )}
         {...rest}
@@ -20,5 +20,5 @@ const InlineCode = forwardRef<HTMLElement, InlineCodeProps>(
     )
   }
 )
-InlineCode.displayName = "InlineCode"
-export { InlineCode, type InlineCodeProps }
+Pre.displayName = "pre"
+export { Pre, type PreProps }
