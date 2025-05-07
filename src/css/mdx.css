@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@import "./colors";
+@import "./tailwind-variables";
+
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+  }
+}
+
+/* 
+* Line numbers
+*/
+[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: line;
+}
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply text-gray-2 mr-4 inline-block min-w-4 text-right;
+}
+
+/* 
+* Line Highlight
+*/
+[data-rehype-pretty-code-figure] [data-line] {
+  @apply border-l-2 border-l-transparent px-3;
+}
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  @apply bg-ios-blue/12 border-l-ios-blue;
+}
+
+/* 
+* Word highlight 
+*/
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+  @apply bg-fill-secondary rounded;
+  box-shadow: 0 0 0 4px var(--fill-secondary);
+}
+[data-rehype-pretty-code-figure] [data-chars-id] {
+  @apply border-b-2 p-1 shadow-none;
+}
+
+/* 
+* Code title
+*/
+[data-rehype-pretty-code-figure] [data-rehype-pretty-code-title] {
+  @apply bg-gray-6 border-fill-tertiary text-label-secondary rounded-t-[0.4rem] border border-b-0 px-3 py-3.5 text-sm leading-none;
+}
+[data-rehype-pretty-code-figure] [data-rehype-pretty-code-title] + pre {
+  @apply rounded-t-none;
+}

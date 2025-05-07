@@ -1,7 +1,16 @@
-// import rehypePrettyCode from "rehype-pretty-code"
+import rehypePrettyCode from "rehype-pretty-code"
 import { defineCollection, defineConfig, s } from "velite"
 
 import { computedFields, timestamp } from "@/lib/velite"
+
+const prettyCodeOptions: import("rehype-pretty-code").Options = {
+  // theme: {
+  //   dark: "github-dark-high-contrast",
+  //   light: "github-light-high-contrast",
+  // },
+  keepBackground: false,
+  bypassInlineCode: false,
+}
 
 // NOTE: Visit the docs
 // https://velite.js.org/guide/define-collections#collection-schema-options
@@ -37,7 +46,7 @@ export default defineConfig({
   },
   collections: { writings },
   mdx: {
-    rehypePlugins: [],
+    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
     remarkPlugins: [],
   },
 })
