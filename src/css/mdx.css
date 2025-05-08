@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./colors.css";
+@import "./tailwind-variables.css";
 
 .shiki,
 .shiki span {
@@ -26,5 +28,15 @@ pre.shiki {
 
   .line {
     @apply relative inline-block w-full px-5;
+  }
+}
+
+pre.shiki.has-highlighted {
+  .line {
+    @apply border-l-2 border-l-transparent;
+
+    &.highlighted {
+      @apply bg-ios-blue/10 border-l-ios-blue border-l-2;
+    }
   }
 }
