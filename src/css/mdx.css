@@ -19,6 +19,9 @@
   }
 }
 
+/* 
+* base styling of shiki code-blocks
+*/
 pre.shiki {
   @apply focus-visible:ring-ios-blue/60 relative flex max-h-(--max-height,80svh) flex-col overflow-hidden p-0 outline-none focus-visible:ring-4;
 
@@ -31,12 +34,36 @@ pre.shiki {
   }
 }
 
+/* 
+* Line-highlighting
+*/
 pre.shiki.has-highlighted {
   .line {
     @apply border-l-2 border-l-transparent;
 
     &.highlighted {
       @apply bg-ios-blue/10 border-l-ios-blue border-l-2;
+    }
+  }
+}
+
+/* 
+* Diff highlighting
+*/
+pre.shiki.has-diff {
+  .line.diff {
+    @apply before:absolute before:left-1;
+
+    &.add {
+      @apply bg-ios-green/15 before:text-[#A6E3A1] before:content-['+'];
+    }
+
+    &.remove {
+      @apply bg-ios-red/10 before:text-[#EBA0AC] before:content-['-'];
+
+      span {
+        @apply opacity-60;
+      }
     }
   }
 }
