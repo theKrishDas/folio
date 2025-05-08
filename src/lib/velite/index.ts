@@ -1,4 +1,10 @@
 import { stat } from "fs/promises"
+import {
+  transformerNotationDiff,
+  transformerNotationErrorLevel,
+  transformerNotationFocus,
+  transformerNotationHighlight,
+} from "@shikijs/transformers"
 import { defineSchema, s } from "velite"
 
 const timestamp = defineSchema(() =>
@@ -24,4 +30,19 @@ const computedFields = <T extends { slug: string }>(data: T) => ({
   slugAsParams: data.slug.split("/").slice(1).join("/"),
 })
 
-export { computedFields, timestamp }
+const shikiOptions = {
+  themes: {
+    dark: "catppuccin-mocha", // "aurora-x",
+    light: "catppuccin-latte",
+  },
+  defaultColor: false,
+
+  transformers: [
+    transformerNotationDiff({ matchAlgorithm: "v3" }),
+    transformerNotationHighlight({ matchAlgorithm: "v3" }),
+    transformerNotationFocus({ matchAlgorithm: "v3" }),
+    transformerNotationErrorLevel({ matchAlgorithm: "v3" }),
+  ],
+}
+
+export { computedFields, timestamp, shikiOptions }

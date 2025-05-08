@@ -1,13 +1,7 @@
 import rehypeShiki from "@shikijs/rehype"
-import {
-  transformerNotationDiff,
-  transformerNotationErrorLevel,
-  transformerNotationFocus,
-  transformerNotationHighlight,
-} from "@shikijs/transformers"
 import { defineCollection, defineConfig, s } from "velite"
 
-import { computedFields, timestamp } from "@/lib/velite"
+import { computedFields, shikiOptions, timestamp } from "@/lib/velite"
 
 // NOTE: Visit the docs
 // https://velite.js.org/guide/define-collections#collection-schema-options
@@ -43,20 +37,7 @@ export default defineConfig({
   },
   collections: { writings },
   mdx: {
-    rehypePlugins: [
-      [
-        rehypeShiki as any, // eslint-disable-line @typescript-eslint/no-explicit-any
-        {
-          theme: "one-dark-pro",
-          transformers: [
-            transformerNotationDiff({ matchAlgorithm: "v3" }),
-            transformerNotationHighlight({ matchAlgorithm: "v3" }),
-            transformerNotationFocus({ matchAlgorithm: "v3" }),
-            transformerNotationErrorLevel({ matchAlgorithm: "v3" }),
-          ],
-        },
-      ],
-    ],
+    rehypePlugins: [[rehypeShiki, shikiOptions]],
     remarkPlugins: [],
   },
 })
