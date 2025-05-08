@@ -4,6 +4,7 @@ import {
   transformerNotationErrorLevel,
   transformerNotationFocus,
   transformerNotationHighlight,
+  transformerNotationWordHighlight,
 } from "@shikijs/transformers"
 import { defineSchema, s } from "velite"
 
@@ -42,6 +43,7 @@ const shikiOptions = {
     transformerNotationHighlight({ matchAlgorithm: "v3" }),
     transformerNotationFocus({ matchAlgorithm: "v3" }),
     transformerNotationErrorLevel({ matchAlgorithm: "v3" }),
+    transformerNotationWordHighlight({ matchAlgorithm: "v3" }),
   ],
 }
 

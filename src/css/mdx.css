@@ -42,7 +42,7 @@ pre.shiki.has-highlighted {
     @apply border-l-2 border-l-transparent;
 
     &.highlighted {
-      @apply bg-ios-blue/10 border-l-ios-blue border-l-2;
+      @apply bg-ios-blue/12 border-l-ios-blue border-l-2;
     }
   }
 }
@@ -90,4 +90,13 @@ pre.shiki.has-diff .line.diff {
       @apply opacity-60;
     }
   }
+}
+
+/*
+* Word highlighting
+*/
+pre.shiki .line .highlighted-word {
+  @apply bg-fill-secondary/100 rounded;
+  box-shadow: 0 0 0 4px
+    color-mix(in oklab, var(--fill-secondary) 100%, transparent);
 }
