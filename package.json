@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "build": "npm run build:content && npm run build:next",
+    "dev": "next dev --turbopack",
     "clean:dev": "npx rimraf .next && next dev --turbopack",
     "clean:build": "npx rimraf .next && npm run build"
   },
