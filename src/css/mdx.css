@@ -47,23 +47,47 @@ pre.shiki.has-highlighted {
   }
 }
 
-/* 
-* Diff highlighting
+/*
+* Line-numbers
 */
-pre.shiki.has-diff {
-  .line.diff {
-    @apply before:absolute before:left-1;
+/* Style for code blocks with conditional line numbers */
+pre.shiki {
+  counter-reset: step;
+  counter-increment: step 0;
 
-    &.add {
-      @apply bg-ios-green/15 before:text-[#A6E3A1] before:content-['+'];
+  &:has(.line:nth-child(2)),
+  &:has(.line.diff) {
+    code .line::before {
+      @apply mr-5 inline-block min-w-4 text-right;
     }
+  }
 
-    &.remove {
-      @apply bg-ios-red/10 before:text-[#EBA0AC] before:content-['-'];
-
-      span {
-        @apply opacity-60;
+  /* Only apply line numbers if there are multiple lines */
+  &:has(.line:nth-child(2)) {
+    code .line {
+      &::before {
+        counter-increment: step;
+        @apply text-gray-2 content-[counter(step)];
       }
+    }
+  }
+}
+
+/*
+* Diff highlighting
+*
+* Make sure to put these styles after the line-number styles
+*/
+pre.shiki.has-diff .line.diff {
+  &.add {
+    @apply bg-ios-green/15 before:text-[#A6E3A1] before:content-['+'];
+  }
+
+  &.remove {
+    @apply bg-ios-red/10 before:text-[#EBA0AC] before:content-['-'];
+
+    span {
+      @apply opacity-60;
     }
   }
 }
