@@ -20,13 +20,13 @@ const CodeTab = ({
   return (
     <>
       <Tabs.Root defaultValue="0" className="shiki-code-tab">
-        <Tabs.List className="bg-gray-6 border-fill-tertiary inline-flex w-full rounded-t-lg border border-b-0 p-1">
+        <Tabs.List className="bg-gray-6 border-fill-tertiary inline-flex w-full overflow-x-auto rounded-t-lg border border-b-0 p-1">
           {children.map((_, idx) => (
             <Tabs.Trigger value={idx.toString()} key={idx} asChild>
               <Button
                 size="sm"
                 color="gray"
-                className="rounded-md data-[state=inactive]:bg-transparent"
+                className="touch-pan-x rounded-md data-[state=inactive]:bg-transparent"
               >
                 {tabNames[idx]}
               </Button>
