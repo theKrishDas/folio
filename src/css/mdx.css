@@ -108,10 +108,10 @@ div.remark-code-container {
   .remark-code-title {
     @apply bg-gray-6 border-fill-tertiary text-label-secondary rounded-t-lg border border-b-0 px-5 py-3.5 text-sm leading-none;
   }
+}
 
-  &:has(.remark-code-title) {
-    pre {
-      @apply rounded-t-none focus-visible:rounded-t-lg;
-    }
-  }
+/* get rid of the top-border and radius if inside a tab or has title */
+div.remark-code-container:has(.remark-code-title) pre,
+.shiki-code-tab pre {
+  @apply rounded-t-none focus-visible:rounded-t-lg;
 }

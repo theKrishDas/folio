@@ -13,6 +13,7 @@ import {
   Ul as ul,
 } from "../typography"
 import { Heading, HeadingProps } from "../typography/heading"
+import CodeTab from "./code-tab"
 
 const SharedComponents = {
   h2: (props: HeadingProps) => <Heading level="h2" {...props} />,
@@ -30,5 +31,6 @@ const SharedComponents = {
   pre,
   hr: Divider,
   img,
+  CodeTab,
 }
 export default SharedComponents
