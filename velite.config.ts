@@ -1,4 +1,5 @@
 import rehypeShiki from "@shikijs/rehype"
+import remarkCodeTitles from "remark-flexible-code-titles"
 import { defineCollection, defineConfig, s } from "velite"
 
 import { computedFields, shikiOptions, timestamp } from "@/lib/velite"
@@ -38,6 +39,6 @@ export default defineConfig({
   collections: { writings },
   mdx: {
     rehypePlugins: [[rehypeShiki, shikiOptions]],
-    remarkPlugins: [],
+    remarkPlugins: [[remarkCodeTitles]],
   },
 })

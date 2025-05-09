@@ -98,3 +98,20 @@ pre.shiki .line .highlighted-word {
   box-shadow: 0 0 0 4px
     color-mix(in oklab, var(--fill-secondary) 100%, transparent);
 }
+
+/*
+* Code titles
+*/
+div.remark-code-container {
+  @apply my-5;
+
+  .remark-code-title {
+    @apply bg-gray-6 border-fill-tertiary text-label-secondary rounded-t-lg border border-b-0 px-5 py-3.5 text-sm leading-none;
+  }
+
+  &:has(.remark-code-title) {
+    pre {
+      @apply rounded-t-none focus-visible:rounded-t-lg;
+    }
+  }
+}
