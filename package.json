@@ -41,6 +41,7 @@
     "eslint": "^9.26.0",
     "eslint-config-next": "15.2.4",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "remark-flexible-code-titles": "^1.2.0",
     "typescript": "^5.8.3",
     "velite": "^0.2.2"
   }
