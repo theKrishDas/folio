@@ -1,7 +1,9 @@
 import { ComponentPropsWithoutRef, forwardRef } from "react"
+import Link from "next/link"
 import { cva, VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils"
+import { cn, slugify } from "@/lib/utils"
+import { MatLink } from "@/components/icons/material-icons"
 
 const headingVariants = cva(
   "text-label-primary/86 dark:text-label-primary/90",
@@ -17,10 +19,15 @@ const headingVariants = cva(
         true: "hidden",
         false: "",
       },
+      addAnchor: {
+        true: "relative",
+        false: "",
+      },
     },
     defaultVariants: {
       level: "h1",
       srOnly: false,
+      addAnchor: false,
     },
   }
 )
@@ -32,17 +39,37 @@ type HeadingProps = ComponentPropsWithoutRef<Levels> &
     styleAs?: Levels
   }
 const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ className, level = "h1", styleAs, srOnly, ...rest }, ref) => {
+  ({ className, level = "h1", styleAs, srOnly, addAnchor, ...rest }, ref) => {
     const Comp = level
+    const baseClassNames = headingVariants({
+      level: styleAs || level,
+      srOnly,
+      addAnchor,
+      className,
+    })
+
+    if (!addAnchor)
+      return <Comp ref={ref} className={cn(baseClassNames)} {...rest} />
+
+    const { children, ...props } = rest
+    if (!children)
+      throw new Error("Children must be defined inside the heading")
+
+    const childrenString = children.toString()
+    const slug = slugify(childrenString)
 
     return (
-      <Comp
-        ref={ref}
-        className={cn(
-          headingVariants({ level: styleAs || level, srOnly, className })
-        )}
-        {...rest}
-      />
+      <Comp ref={ref} className={cn(baseClassNames)} id={slug} {...props}>
+        {childrenString}
+        <Link
+          href={`#${slug}`}
+          key={`link-${slug}`}
+          className="group absolute inset-0 select-none"
+          aria-hidden
+        >
+          <MatLink className="text-label-secondary/0 group-hover:text-ios-blue absolute top-0 right-full mt-px mr-0 text-xl transition-all duration-250 group-hover:mr-1" />
+        </Link>
+      </Comp>
     )
   }
 )

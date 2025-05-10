@@ -16,9 +16,9 @@ import { Heading, HeadingProps } from "../typography/heading"
 import CodeTab from "./code-tab"
 
 const SharedComponents = {
-  h2: (props: HeadingProps) => <Heading level="h2" {...props} />,
-  h3: (props: HeadingProps) => <Heading level="h3" {...props} />,
-  h4: (props: HeadingProps) => <Heading level="h4" {...props} />,
+  h2: (props: HeadingProps) => <Heading level="h2" addAnchor {...props} />,
+  h3: (props: HeadingProps) => <Heading level="h3" addAnchor {...props} />,
+  h4: (props: HeadingProps) => <Heading level="h4" addAnchor {...props} />,
   p,
   strong,
   em,
