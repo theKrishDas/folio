@@ -19,8 +19,9 @@ const writings = defineCollection({
       published: s.boolean().default(true),
       cover: s.image().optional(),
       featured: s.boolean().default(false),
-      // categories: s.array(s.string()).default(["NONE"]),
+      categories: s.array(s.string()).optional(),
       tags: s.array(s.string()).default([]),
+      meta: s.metadata(),
       toc: s.toc(),
       body: s.mdx(),
     })
