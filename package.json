@@ -12,7 +12,7 @@
     "build": "npm run build:content && npm run build:next",
     "dev": "next dev --turbopack",
     "clean:dev": "npx rimraf .next && next dev --turbopack",
-    "clean:build": "npx rimraf .next && npm run build:content && npm run build"
+    "clean:build": "npx rimraf .next && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.2",

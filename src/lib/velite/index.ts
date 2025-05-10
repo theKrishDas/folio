@@ -1,8 +1,6 @@
 import { stat } from "fs/promises"
 import {
   transformerNotationDiff,
-  transformerNotationErrorLevel,
-  transformerNotationFocus,
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers"
