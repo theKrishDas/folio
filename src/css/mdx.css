@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "./colors.css";
+@import "./tailwind-variables.css";
+
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+@media (prefers-color-scheme: dark) {
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark);
+    font-style: var(--shiki-dark-font-style);
+    font-weight: var(--shiki-dark-font-weight);
+    text-decoration: var(--shiki-dark-text-decoration);
+  }
+}
+
+/* 
+* base styling of shiki code-blocks
+*/
+pre.shiki {
+  code {
+    @apply grid overflow-auto py-5 outline-none;
+  }
+
+  .line {
+    @apply relative inline-block w-full px-5;
+  }
+}
+
+/* 
+* Line-highlighting
+*/
+pre.shiki.has-highlighted {
+  .line {
+    @apply border-l-2 border-l-transparent;
+
+    &.highlighted {
+      @apply bg-ios-blue/12 border-l-ios-blue border-l-2;
+    }
+  }
+}
+
+/*
+* Line-numbers
+*/
+/* Style for code blocks with conditional line numbers */
+pre.shiki {
+  counter-reset: step;
+  counter-increment: step 0;
+
+  &:has(.line:nth-child(2)),
+  &:has(.line.diff) {
+    code .line::before {
+      @apply mr-5 inline-block min-w-4 text-right;
+    }
+  }
+
+  /* Only apply line numbers if there are multiple lines */
+  &:has(.line:nth-child(2)) {
+    code .line {
+      &::before {
+        counter-increment: step;
+        @apply text-gray-2 content-[counter(step)];
+      }
+    }
+  }
+}
+
+/*
+* Diff highlighting
+*
+* Make sure to put these styles after the line-number styles
+*/
+pre.shiki.has-diff .line.diff {
+  &.add {
+    @apply bg-ios-green/15 before:text-[#A6E3A1] before:content-['+'];
+  }
+
+  &.remove {
+    @apply bg-ios-red/10 before:text-[#EBA0AC] before:content-['-'];
+
+    span {
+      @apply opacity-60;
+    }
+  }
+}
+
+/*
+* Word highlighting
+*/
+pre.shiki .line .highlighted-word {
+  @apply bg-fill-secondary/100 rounded;
+  box-shadow: 0 0 0 4px
+    color-mix(in oklab, var(--fill-secondary) 100%, transparent);
+}
+
+/*
+* Code titles
+*/
+div.remark-code-container {
+  @apply my-5;
+
+  .remark-code-title {
+    @apply bg-gray-6 border-fill-tertiary text-label-secondary rounded-t-lg border border-b-0 px-5 py-3.5 text-sm leading-none;
+  }
+}
+
+/* get rid of the top-border and radius if inside a tab or has title */
+div.remark-code-container:has(.remark-code-title) pre,
+.shiki-code-tab pre {
+  @apply rounded-t-none focus-visible:rounded-t-lg;
+}
