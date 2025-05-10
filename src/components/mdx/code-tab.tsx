@@ -26,7 +26,7 @@ const CodeTab = ({
               <Button
                 size="sm"
                 color="gray"
-                className="touch-pan-x rounded-md data-[state=inactive]:bg-transparent"
+                className="touch-auto rounded-md data-[state=inactive]:bg-transparent"
               >
                 {tabNames[idx]}
               </Button>
@@ -41,6 +41,7 @@ const CodeTab = ({
             asChild
             className="mt-0"
             style={{ marginTop: 0 }}
+            tabIndex={-1}
           >
             {child}
           </Tabs.Content>
