@@ -10,7 +10,56 @@ import { Heading } from "@/components/typography"
 
 import "@/css/mdx.css"
 
+import { baseURL } from "@/lib/constants"
 import { formatDate } from "@/lib/utils"
+
+export async function generateStaticParams() {
+  // NextJS hoola-hoops
+  // Generate static route params by splitting nested slugs into path segments
+  const pathSegments = writings.map(writing => writing.slugAsParams.split("/"))
+  const params = pathSegments.map(segments => ({ slug: segments }))
+  return params
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params?: Promise<{
+    slug?: string[]
+  }>
+}) {
+  const res = await params
+  if (!res) return null
+  const { slug } = res
+  if (!slug) return null
+
+  // TODO: Extract this to a separate function
+  const writing = writings.find(w => {
+    const constructedSlug = slug.join("/")
+    return w.slugAsParams === constructedSlug
+  })
+  if (!writing) return null
+
+  const {
+    title,
+    summary: description,
+    date: publishedTime,
+    slugAsParams: wSlug,
+  } = writing
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime,
+      url: `${baseURL}/w/${wSlug}`,
+      // images: [{ url: "" }],
+    },
+  }
+}
 
 export default async function WritingPage({
   params,
@@ -19,8 +68,6 @@ export default async function WritingPage({
     slug?: string[]
   }>
 }) {
-  // TODO: Genarate static params for the /w/[...slug] pages
-
   const res = await params
   if (!res) return
   const { slug } = res
