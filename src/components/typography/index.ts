@@ -1,13 +1,14 @@
 import { Anchor } from "./anchor"
 import { Blockquote } from "./blockquote"
 import { Cite } from "./cite"
+import { Code } from "./code"
 import { Divider } from "./divider"
 import { Em } from "./em"
 import { Heading } from "./heading"
 import { Image } from "./image"
-import { InlineCode } from "./inline-code"
 import { Li } from "./li"
 import { Paragraph } from "./paragraph"
+import { Pre } from "./pre"
 import { Strong } from "./strong"
 import { Ul } from "./ul"
 
@@ -21,9 +22,10 @@ export {
   Blockquote,
   Cite,
   Anchor,
-  InlineCode,
   Divider,
   Image,
+  Code,
+  Pre,
 }
 
 /* -------------------------------------------------------------------------------------------------

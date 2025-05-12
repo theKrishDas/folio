@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container"
 import { PagePadding } from "@/components/ui/page-padding"
 import { Section } from "@/components/ui/section"
 import { IonPlay } from "@/components/icons/ion-icons"
-import { Heading, InlineCode } from "@/components/typography"
+import { Code, Heading } from "@/components/typography"
 
 const variants: VariantProps<typeof buttonVariants>["variant"][] = [
   "gray",
@@ -80,7 +80,7 @@ export default function Page() {
       <Container shorterWidth asChild>
         <Section>
           <Heading level="h3" className="mt-0">
-            <InlineCode>{"isIconOnly"}</InlineCode> prop:
+            <Code>{"isIconOnly"}</Code> prop:
           </Heading>
           {sizes.map(size => (
             <div key={size} className="mb-3 flex flex-wrap items-center gap-2">
