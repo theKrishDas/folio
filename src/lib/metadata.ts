@@ -2,8 +2,13 @@ import { Metadata } from "next"
 
 import { baseURL } from "./constants"
 
-const title = "Upsher - Web App developer" as const
+const title =
+  "Upsher - Building Functional Web Apps with Modern Technologies" as const
+// const title = "Upsher - Web App developer" as const
 const description = "Web App developer, optimist, living in India" as const
+
+const OGAltText =
+  "Upsher - Building Functional Web Apps with Modern Technologies" as const
 
 export const siteMetadata: Metadata = {
   title: {
@@ -37,10 +42,10 @@ export const siteMetadata: Metadata = {
     siteName: "Upsher's Portfolio",
     images: [
       {
-        url: "/opengraph-image.jpg",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Banner of Upsher's Portfolio",
+        alt: OGAltText,
       },
     ],
     type: "website",
@@ -51,7 +56,14 @@ export const siteMetadata: Metadata = {
     title,
     description,
     creator: "@upsher",
-    images: ["/twitter-image.jpg"],
+    images: [
+      {
+        url: "/twitter-image.png",
+        width: 1200,
+        height: 630,
+        alt: OGAltText,
+      },
+    ],
   },
   robots: {
     index: true,
