@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation"
+import { notFound } from "next/navigation"
 import { writings } from "#/writings"
 
 import Back from "@/components/ui/back-button"
@@ -12,6 +12,7 @@ import "@/css/mdx.css"
 
 import { baseURL } from "@/lib/constants"
 import { formatDate } from "@/lib/utils"
+import { findWritingByNextSlugs } from "@/lib/writings"
 
 export async function generateStaticParams() {
   // NextJS hoola-hoops
@@ -33,11 +34,8 @@ export async function generateMetadata({
   const { slug } = res
   if (!slug) return null
 
-  // TODO: Extract this to a separate function
-  const writing = writings.find(w => {
-    const constructedSlug = slug.join("/")
-    return w.slugAsParams === constructedSlug
-  })
+  // Get the writing from the slug
+  const writing = findWritingByNextSlugs(slug)
   if (!writing) return null
 
   const {
@@ -71,13 +69,10 @@ export default async function WritingPage({
   const res = await params
   if (!res) return
   const { slug } = res
-  if (!slug) redirect("/") // TODO: redirect to latest writings here
+  if (!slug) return
 
-  // TODO: Extract this to a separate function
-  const writing = writings.find(w => {
-    const constructedSlug = slug.join("/")
-    return w.slugAsParams === constructedSlug
-  })
+  // Get the writing from the slug
+  const writing = findWritingByNextSlugs(slug)
   if (!writing) notFound()
 
   return (
