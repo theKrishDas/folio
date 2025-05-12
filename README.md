@@ -1,46 +1,45 @@
-# Nextkit - A nextjs starter kit (DEVELOPEMENT)
+[![Banner](./src/app/opengraph-image.png)](https://upsher.dev)
 
-Accelerate NextJS development with Nextkit: a pre-configured Next.js,
-TypeScript, and Tailwind boilerplate.
+<div align="center">
 
-## Cloning:
+<a href="https://upsher.dev">Website</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://upsher.dev/w">Writings</a>
 
-### Clone in Nextkit:
+<p align="center">
+  <a href="https://twitter.com/intent/follow?screen_name=theupsher">
+    <img src="https://img.shields.io/twitter/follow/theupsher.svg?label=Follow%20@theupsher" alt="Follow @theupsher" />
+  </a>
+</p>
+
+</div>
+
+---
+
+# Upsher
+
+Hey, I build functional Web Apps and currently focused on React & NextJS ecoSystem.
+
+_React · Next.js · WebGL · Linux_
+
+## Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com)
+- **Analytics**: [Posthog analytics](https://posthog.com/)
+
+## Running Locally
 
 ```sh
-git clone -b next@15 https://github.com/Krish-Das/nextkit.git
-```
-
-### or clone in current directory:
-
-```sh
-git clone -b next@15 https://github.com/Krish-Das/nextkit.git .
-```
-
-### or clone single branch in current directory:
-
-```sh
-git clone -b next@15 --single-branch https://github.com/Krish-Das/nextkit.git .
-```
-
-## Running locally
-
-```sh
+git clone https://github.com/theKrishDas/folio
+cd folio
+npm i
 npm run dev
 ```
 
-### Notes:
+Personally, I use [`bun`](https://bun.sh). 🙂
 
-This branch does not use any UI-library of any kind and serves as a clean
-starting point.
+---
 
-1. Package versions
-
-- Next 15
-- React 19
-- Tailwind 4
-
-2. Formatting
-
-- @ianvs/prettier-plugin-sort-imports
-- prettier-plugin-tailwindcss
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com)
