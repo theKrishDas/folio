@@ -29,12 +29,12 @@ export default function Page() {
 
           {/* Categories */}
           <div className="w-full overflow-x-auto">
-            <ul className="flex w-fit flex-nowrap gap-2.5">
+            <ul className="flex w-fit flex-nowrap gap-1.5">
               {["All Categories", "Documentation", "Guide", "Personal"].map(
                 (item, idx) => (
                   <li
                     className={cn(
-                      "bg-fill-quaternary text-label-secondary rounded-lg px-2 py-1.5 text-xs leading-none tracking-wide whitespace-nowrap select-none md:inline-block",
+                      "bg-fill-quaternary text-label-secondary rounded-lg px-2 py-1.5 text-xs leading-none font-medium tracking-wide whitespace-nowrap select-none md:inline-block",
                       idx === 0 && "bg-ios-blue text-white"
                     )}
                     key={idx}
@@ -76,7 +76,10 @@ export default function Page() {
           {/* CTA: Subscribe to the writings */}
           <div>
             <SectionHeading className="mt-0 pl-1">
-              Subscribe to new writings
+              <span>Subscribe to new writings </span>
+              <span className="text-gray-1 bg-fill-quaternary pointer-events-none ml-1 touch-none rounded-md px-1 py-0.5 text-xs leading-none tracking-wide select-none">
+                Soon
+              </span>
             </SectionHeading>
 
             <div className="inline-flex w-full gap-2">
@@ -84,7 +87,8 @@ export default function Page() {
                 className={cn(
                   "bg-fill-tertiary text-label-secondary w-full max-w-70 rounded-lg text-sm select-none",
                   "px-3.5 py-1.75 leading-5",
-                  "rounded-xl px-5 py-3.5 leading-5.5"
+                  "rounded-xl px-5 py-3.5 leading-5.5",
+                  "text-label-tertiary bg-fill-secondary pointer-events-none opacity-50" // Disabled
                 )}
               >
                 Email adress...
