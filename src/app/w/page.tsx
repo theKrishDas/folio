@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { writings } from "#/writings"
 
 import { cn, formatDate } from "@/lib/utils"
@@ -46,27 +47,32 @@ export default function Page() {
             </ul>
           </div>
 
-          {/* Lists */}
+          {/* Writings lists */}
           <ul className="flex touch-none flex-col gap-1.5 select-none">
             {writings.map(w => (
-              <li
-                key={w.slug}
-                className="hover:bg-fill-secondary flex flex-col gap-2 rounded-xl px-0 py-2.5 transition-all duration-250 hover:px-3"
-              >
-                <div className="align-start flex gap-4">
-                  <h2 className="flex-1 truncate text-[0.9rem] leading-none font-medium">
-                    {w.title}
-                  </h2>
-                  <p className="text-label-secondary font-jetbrains-mono text-xs leading-none">
-                    {formatDate(w.date).split(",")[0]}
-                  </p>
-                </div>
+              <li key={w.slug} className="h-fit">
+                <Link
+                  href={`/w/${w.slugAsParams}`}
+                  className={cn(
+                    "hover:bg-fill-secondary flex flex-col gap-2 rounded-xl px-0 py-2.5 transition-all duration-250 hover:px-3",
+                    "focus-visible:ring-ios-blue/[var(--separator-non-opaque-opacity)] focus-visible:ring-offset-background outline-none focus-visible:px-3 focus-visible:ring-4 focus-visible:ring-offset-3" // ring treatment
+                  )}
+                >
+                  <div className="align-start flex gap-4">
+                    <h2 className="flex-1 truncate text-[0.9rem] leading-none font-medium">
+                      {w.title}
+                    </h2>
+                    <p className="text-label-secondary font-jetbrains-mono text-xs leading-none">
+                      {formatDate(w.date).split(",")[0]}
+                    </p>
+                  </div>
 
-                <div className="max-w-[calc(100%-6rem)]">
-                  <p className="text-label-secondary truncate text-xs font-medium">
-                    {w.summary}
-                  </p>
-                </div>
+                  <div className="max-w-[calc(100%-6rem)]">
+                    <p className="text-label-secondary truncate text-xs font-medium">
+                      {w.summary}
+                    </p>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
