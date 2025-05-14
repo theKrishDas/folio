@@ -80,7 +80,7 @@ export default async function WritingPage({
       <Container asChild>
         <Section asChild className="relative">
           <nav>
-            <Back label="Home" url="/" />
+            <Back url="/w" />
           </nav>
         </Section>
       </Container>
