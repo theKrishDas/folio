@@ -10,7 +10,7 @@ const headingVariants = cva(
   {
     variants: {
       level: {
-        h1: "leading-tight -tracking-[0.015em] font-instrument-serif text-5xl font-normal",
+        h1: "font-instrument-serif text-5xl text-[2.7rem] leading-[1.15] font-normal -tracking-[0.01em]",
         h2: "mt-12 mb-3 text-2xl leading-8 font-bold -tracking-[0.00625em] scroll-m-12",
         h3: "mt-10 mb-2 text-lg leading-6.5 font-semibold -tracking-[0.0025em] scroll-m-10",
         h4: "text-lg font-semibold -tracking-[0.015em] py-4 [&:has(+p)]:pb-3 text-ios-pink dark:text-ios-pink",
